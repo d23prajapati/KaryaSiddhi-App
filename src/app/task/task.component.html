@@ -1,0 +1,17 @@
+<div class="container">
+    <div id="icon"><button (click)="completeToggle()"><i
+                [ngStyle]="{'color': item.status == 'complete'?'green':'black'}"
+                class="fa-sharp fa-regular fa-circle-check fa-2x"></i></button>
+    </div>
+    <div id="title">
+        <p>{{ item.title }}</p>
+    </div>
+    <div id="description">
+        <p>
+            {{ item.description}}
+        </p>
+    </div>
+    <div id="duedate"><span>{{ item.dueDate | date: 'd MMM y'}}</span></div>
+    <div id="priority"><span><i class="fa-solid fa-arrow-{{priorityIcons[item.priority.toString()]}}"></i></span>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+    <h3>Dashboard</h3>
+    <div class="date">
+        {{date | date: 'EEEE, d MMM y'}}
+    </div>
+    <div class="greet">
+        <h2>{{ greet }}, Darshan</h2>
+    </div>
+    
+    <div class="task-status">
+        <div>
+            <p>
+                <select #teamPeriod name="timeperiod" id="timeperiod" class="dropdown" (change)="timePeriodSelected(teamPeriod.value)">
+                    <option value="thisweek">This week</option>
+                    <option value="thismonth">This month</option>
+                    <option value="tomorrow">Tomorrow</option>
+                </select>
+            </p>
+        </div>
+        <div class="task-complete-container">
+            <div><i class="fa-solid fa-circle-check fa-2x backcolor"></i></div>
+            <p >{{ noOfTaskCompleted }}</p>
+            <p>Tasks completed</p>
+        </div>
+        <div class="task-assigned-container">
+            <p> {{ noOfTaskAssigned }}</p>
+            <p>
+                Tasks assigned
+            </p>
+        </div>
+    </div>
+
+    <div class="task-list-container">
+        <div class="heading">
+            <h3>My Priorities <small>(next 3 days - high priority)</small></h3>
+            <button (click)="showModelfunc()"><i class="fa-solid fa-plus fa-2x backcolor"></i></button>
+        </div>
+        <app-task-list 
+            [taskItems]="taskItems" 
+            [timePeriod]="timePeriod" 
+            [component]="component"
+            (onSelectIconEvent)="onIconClick($event)"></app-task-list>
+    </div>
+</div>
+<app-modal *ngIf="showModel" (closeModalEvent)="onCrossBtnClicked($event)" [currentComponent]="'home'"></app-modal>

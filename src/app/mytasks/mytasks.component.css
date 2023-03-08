@@ -1,0 +1,51 @@
+.container {
+    padding: 5px;
+}
+
+.heading-container {
+    display: flex;
+    justify-content: space-between;
+}
+.task-list-container {
+    margin: 0px;
+    width: 100%;
+}
+.heading-container > p {
+    margin: 10px;
+}
+.subtask-container {
+    min-height: 25vh;
+}
+.dropdown {
+    border: none;
+    font-size: 1rem;
+}
+
+.task-list-container .heading {
+    display: flex;
+}
+.task-list-container .heading h4 {
+    flex-basis: 80%;
+}
+.backcolor {
+    color: green;
+}
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0px 10px;
+    }
+    .heading h4 {
+        flex-basis: 60%;
+        font-size: 1rem;
+
+    }
+}

@@ -1,0 +1,56 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #015366;
+    color: white;
+    height: 89.2vh;
+    /* padding-top: 90px; */
+    /* position: absolute;
+    top: 80px; */
+    text-align: center;
+}
+
+.container .home, .tasks, .help {
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    margin: 5px auto;
+}
+
+.container .help {
+    position: relative;
+    top: 59vh;
+}
+hr {
+    background-color: #015366b7;;
+}
+.container>p {
+    padding: 10px 0px;
+    font-size: 1.2rem;
+    font-weight: 100;
+}
+
+@media screen and (max-width: 600px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        background-color: #015366;
+        color: white;
+        height: 93.2vh;
+        /* padding-top: 90px; */
+        /* position: absolute;
+        top: 80px; */
+        text-align: center;
+    }
+    .container>p {
+        padding: 10px 0px;
+        font-size: 1rem;
+        font-weight: 100;
+    }
+    .container .help {
+        position: relative;
+        top: 69vh;
+    }   
+}

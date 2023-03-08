@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="heading-container">
+        <h3>My Tasks</h3>
+        <p>
+            <select #teamPeriod name="timeperiod" id="timeperiod" class="dropdown"
+                (change)="onTimePeriodSelected(teamPeriod.value)">
+                <option value="incompletetask">Incomplete Tasks</option>
+                <option value="completetask">Complete Tasks</option>
+            </select>
+        </p>
+    </div>
+    <div class="task-list-container">
+        <div class="subtask-container">
+            <div class="heading">
+                <h4>My Priorities <small>(next 3 days - high priority)</small></h4>
+                <button (click)="openModel()"><i class="fa-solid fa-plus fa-2x backcolor"></i></button>
+            </div>
+            <app-task-list 
+                [taskStatus]="taskStatus" 
+                [component]="component" 
+                [taskListAll]="taskItems2"
+                (onSelectIconEvent)="onIconClicked($event)"></app-task-list>
+        </div>
+        <div class="subtask-container">
+            <div class="heading">
+                <h4>Today's tasks</h4>
+                <button (click)="openModel()"><i class="fa-solid fa-plus fa-2x backcolor"></i></button>
+            </div>
+            <app-task-list 
+                [taskStatus]="taskStatus" 
+                [component]="component" 
+                [taskListAll]="todaysTasks"
+                (onSelectIconEvent)="onIconClicked($event)"></app-task-list>
+        </div>
+        <div class="subtask-container">
+            <div class="heading">
+                <h4>Later tasks</h4>
+                <button (click)="openModel()"><i class="fa-solid fa-plus fa-2x backcolor"></i></button>
+            </div>
+            <app-task-list 
+                [taskStatus]="taskStatus" 
+                [component]="component" 
+                [taskListAll]="laterTasks"
+                (onSelectIconEvent)="onIconClicked($event)"></app-task-list>
+        </div>
+    </div>
+</div>
+<app-modal *ngIf="showModel" (closeModalEvent)="onCrossBtnClick($event)" [currentComponent]="'mytask'"></app-modal>

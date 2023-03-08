@@ -1,0 +1,78 @@
+.model {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.64);
+}
+
+.model-content{
+    position: absolute;
+    top: 13vh;
+    left: 30%;
+    height: 80%;
+    width: 50%;
+    background-color: whitesmoke;
+    padding: 10px;
+}
+
+.heading-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.heading-container  i {
+    padding: 10px;
+}
+
+.model-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.model-form > label {
+    font-size: 1.3rem;
+    margin-top: 20px;
+    font-weight:500;
+}
+
+.model-form > input {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.model-form > select {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.modal-btn {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    margin-top: 140px;
+}
+
+.modal-btn > button, #closebtn {
+    margin: 0px 10px;
+    padding: 5px 25px;
+    background-color: #015366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.modal-btn > button:hover, #closebtn:hover {
+    background-color: #013a47;
+    transition: 0.2s ease-out;
+}
+
+#closebtn {
+    text-decoration: none;
+}
+
+.heading-container > button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}

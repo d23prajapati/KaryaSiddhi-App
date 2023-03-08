@@ -1,0 +1,33 @@
+<div class="model">
+    <div class="model-content">
+        <div class="heading-container">
+            <h3>New task</h3>
+            <button type="button" (click)="onCrossBtnClick()"><i class="fa-solid fa-xmark fa-2x"></i></button>
+        </div>
+        <div>
+            <form class="model-form" id="modelForm" #modalForm="ngForm" (ngSubmit)="onTaskCreate(modalForm.value)">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" ngModel>
+
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" ngModel>
+
+                <label for="priority">Priority</label>
+                <select name="priority" id="priority" ngModel>
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+
+                <label for="duedate">Due Date</label>
+                <input type="date" name="duedate" id="duedate" ngModel>
+
+                <div class="modal-btn">
+                    <!-- <input type="submit" name="save" class="savebtn" id="savebtn" value="Save"> -->
+                    <button type="submit" class="savebtn" id="savebtn">Save</button>
+                    <button type="button" class="savebtn" id="closebtn" (click)="onCrossBtnClick()">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>  

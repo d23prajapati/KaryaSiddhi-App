@@ -1,0 +1,15 @@
+<div class="nav-container">
+  <app-navbar></app-navbar>
+</div>
+<div class="adjustable-container">
+  <div class="side-nav-container" *ngIf="showToggle">
+    <app-sidenav></app-sidenav>
+  </div>
+  <div class="main-container">
+    <router-outlet></router-outlet>
+    
+  </div>
+</div>
+<div class="footer">
+  <p> ©Copyright 2023. All rights reserved</p>
+</div>

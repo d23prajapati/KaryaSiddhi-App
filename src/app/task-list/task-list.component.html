@@ -1,0 +1,5 @@
+<div class="container">
+    <div *ngFor="let taskItem of taskList">
+        <app-task [item]="taskItem" (onCompleteClickEvent)="onSelectButton($event)"></app-task>
+    </div>
+</div>
