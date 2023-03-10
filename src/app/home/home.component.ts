@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   constructor(private taskService: TaskService, private router: Router) {}
 
   ngOnInit(): void {
-    // logic for greet
+    // logic for greeting
     if(this.time >= 0 && this.time < 12) {
       this.greet = "Good Morning";
     } else if (this.time >= 12 && this.time < 16){
@@ -58,7 +58,6 @@ export class HomeComponent implements OnInit {
   }
 
   onCrossBtnClicked(data: boolean) {
-    console.log(data);
     this.showModel = data;
   }
   timePeriodSelected(value: string) {
