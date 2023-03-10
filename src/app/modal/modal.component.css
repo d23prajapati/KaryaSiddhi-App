@@ -76,3 +76,7 @@
     border: none;
     cursor: pointer;
 }
+
+input.ng-invalid.ng-touched {
+    border: red 1px solid;
+}

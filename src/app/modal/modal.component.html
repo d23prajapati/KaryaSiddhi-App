@@ -7,20 +7,20 @@
         <div>
             <form class="model-form" id="modelForm" #modalForm="ngForm" (ngSubmit)="onTaskCreate(modalForm.value)">
                 <label for="title">Title</label>
-                <input type="text" name="title" id="title" ngModel>
+                <input type="text" name="title" id="title" ngModel required>
 
                 <label for="description">Description</label>
-                <input type="text" name="description" id="description" ngModel>
+                <input type="text" name="description" id="description" ngModel required>
 
                 <label for="priority">Priority</label>
-                <select name="priority" id="priority" ngModel>
+                <select name="priority" id="priority" ngModel required>
                     <option value="low">Low</option>
                     <option value="medium">Medium</option>
                     <option value="high">High</option>
                 </select>
 
                 <label for="duedate">Due Date</label>
-                <input type="date" name="duedate" id="duedate" ngModel>
+                <input type="date" name="duedate" id="duedate" ngModel required>
 
                 <div class="modal-btn">
                     <!-- <input type="submit" name="save" class="savebtn" id="savebtn" value="Save"> -->
@@ -30,4 +30,4 @@
             </form>
         </div>
     </div>
-</div>  
+</div>
