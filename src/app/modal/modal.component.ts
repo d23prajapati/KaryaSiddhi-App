@@ -44,7 +44,7 @@ export class ModalComponent implements OnInit, OnChanges{
     this.task.priority = data.priority;
     this.task.dueDate = data.duedate;
     this.task.status = "incomplete";
-    this.task.taskId = "00";
+    this.task.taskId = "0";
 
     this.taskService.postTask(this.task).subscribe((res) => {
       this.ngOnInit();
