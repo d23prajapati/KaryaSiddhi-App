@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, DoCheck, ElementRef, OnChanges, ChangeDetectionStrategy, ChangeDetectorRef} from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { TaskService } from '../Services/task.service';
 import { Task } from '../Task';
 import { Router } from '@angular/router';
@@ -7,7 +7,6 @@ import { Router } from '@angular/router';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  // providers: [TaskService]
 })
 export class HomeComponent implements OnInit, OnChanges{
 
@@ -39,7 +38,6 @@ export class HomeComponent implements OnInit, OnChanges{
     }
 
     this.taskService.getTask().subscribe(response => {
-      // this.taskItems = response;  
       this.completedTask = response.filter(ele => {
         return ele.status === 'complete';
       })
@@ -55,7 +53,6 @@ export class HomeComponent implements OnInit, OnChanges{
         }
         return (check1 && ((date.getDate() - curr_date.getDate() <= 3)) && ele.priority==='high');
       });
-      // console.log(this.taskItems);
       this.noOfTaskCompleted = this.completedTask.length;
     })
   }
@@ -70,10 +67,8 @@ export class HomeComponent implements OnInit, OnChanges{
   }
   timePeriodSelected(value: string) {
     this.timePeriod = value;
-    // console.log(this.timePeriod);
   }
   onIconClick(task: Task) {
-    // console.log(task);
     if(task.status === 'incomplete') {
       this.noOfTaskCompleted = this.noOfTaskCompleted - 1;
     } else {
