@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TaskService } from '../Services/task.service';
 import { Task } from '../Task';
 import { Router } from '@angular/router';
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
-export class HomeComponent implements OnInit, OnChanges{
+export class HomeComponent implements OnInit {
 
   date = new Date();
   time: number =  this.date.getHours();
@@ -22,10 +22,6 @@ export class HomeComponent implements OnInit, OnChanges{
   component: string = "home";
   
   constructor(private taskService: TaskService, private router: Router) {}
-
-  ngOnChanges() {
-     
-  }
 
   ngOnInit(): void {
     // logic for greet
@@ -74,6 +70,5 @@ export class HomeComponent implements OnInit, OnChanges{
     } else {
       this.noOfTaskCompleted = this.noOfTaskCompleted + 1;
     }
-    console.log()
   }
 }
